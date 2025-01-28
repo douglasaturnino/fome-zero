@@ -1,5 +1,3 @@
-import streamlit as st
-import pandas as pd
 import plotly.express as px
 
 def cities_restaurant_10(countries, df): 
@@ -69,8 +67,6 @@ def cities_cuisine_10(countries, df):
     .sort_values("cuisines", ascending=False)
     .reset_index()
     ) 
-
-    # st.dataframe(df_aux)
 
     fig = px.bar(
         df_aux.head(10),

@@ -2,10 +2,10 @@ import streamlit as st
 import pandas as pd
 
 from utils import cities_data as cd
-from utils.sidebar import create_sidebar # aqui ta importando só a função
-from utils import geral_data as gd # aqui ta importando o arquivo
+from utils.sidebar import create_sidebar 
+from utils import geral_data as gd
 
-def main(): # cria a função
+def main(): 
 
     st.set_page_config(page_title="PAÍSES", page_icon="🏙️", layout="wide")
     
@@ -37,5 +37,5 @@ def main(): # cria a função
 
     st.plotly_chart(figura_top10_cuisine, use_container_width=True)
 
-if __name__ == "__main__": # se o arquivo principal "Home.py" é igual ao arquivo atual "Geral.py"
+if __name__ == "__main__":
     main() 

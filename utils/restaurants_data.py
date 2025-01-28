@@ -1,5 +1,3 @@
-import streamlit as st
-import pandas as pd
 import plotly.express as px
 
 def restaurante_avalia(df, countries, top_n):
@@ -16,11 +14,10 @@ def restaurante_avalia(df, countries, top_n):
         x = "restaurant_name",
         y = "votes",
         text = "votes",
-        text_auto=".2f", # f de float
+        text_auto=".2f", 
         title = "Os Restaurantes que possuem mais Avaliações",
         labels = {"restaurant_name": "Restaurantes",
                  "votes": "Avaliações Cadastradas"}
-        #color_discrete_sequence=["green"] 
     )
 
     return fig

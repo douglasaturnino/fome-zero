@@ -3,17 +3,17 @@ import pandas as pd
 
 from utils import restaurants_data as rd
 from utils.sidebar import create_sidebar, create_filtros_restaurants
-from utils import geral_data as gd # aqui ta importando o arquivo
+from utils import geral_data as gd 
 
-def main(): # cria a função
+def main(): 
 
     st.set_page_config(page_title="RESTAURANTES", page_icon="🛎️", layout="wide")
 
     df = gd.read_processed_data()
 
-    countries = create_sidebar(df) #chama a função
+    countries = create_sidebar(df) 
 
-    top_n = create_filtros_restaurants(df) #chama a função
+    top_n = create_filtros_restaurants(df) 
 
     st.markdown("# VISÃO RESTAURANTES") 
 
@@ -38,7 +38,7 @@ def main(): # cria a função
 
         st.plotly_chart(fig, use_container_width=True)
 
-if __name__ == "__main__": # se o arquivo principal "Home.py" é igual ao arquivo atual "Geral.py"
+if __name__ == "__main__": 
     main() 
 
 

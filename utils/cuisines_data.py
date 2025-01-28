@@ -1,5 +1,4 @@
 import streamlit as st
-import pandas as pd
 import plotly.express as px
 
 def tabela_cuisines(df, countries, top_n, cuisines):
@@ -44,13 +43,13 @@ def top_cuisines(df):
         "votes",
     ]
 
-    for key in cuisines.keys(): # keys faz um iteração nas chaves do cuisines
-        lines = df["cuisines"] == key # sinal == é comparação
+    for key in cuisines.keys(): 
+        lines = df["cuisines"] == key 
         cuisines[key] = (
             df.loc[lines, cols]
             .sort_values(["aggregate_rating", "restaurant_id"], ascending=[False, True])
-            .iloc[0, :] # o zero significa primeira linha e todas as colunas
-            .to_dict() # to_dict serve pra transformar em dicionario
+            .iloc[0, :] 
+            .to_dict() 
         )
 
     return cuisines
@@ -130,11 +129,10 @@ def top_cuisines_melhores(df, countries, top_n):
         x = "cuisines",
         y = "aggregate_rating",
         text = "aggregate_rating",
-        text_auto=".2f", # f de float
+        text_auto=".2f",
         title = f"Top {top_n} Melhores Tipos de Culinárias",
         labels = {"cuisines": "Tipos de Culinárias",
                  "aggregate_rating": "Nota Média"}
-        #color_discrete_sequence=["green"] 
     )
 
     return fig
@@ -154,11 +152,10 @@ def top_cuisines_piores(df, countries, top_n):
         x = "cuisines",
         y = "aggregate_rating",
         text = "aggregate_rating",
-        text_auto=".2f", # f de float
+        text_auto=".2f", 
         title = f"Top {top_n} Piores Tipos de Culinárias",
         labels = {"cuisines": "Tipos de Culinárias",
                  "aggregate_rating": "Nota Média"}
-        #color_discrete_sequence=["green"] 
     )
 
     return fig

@@ -10,7 +10,7 @@ st.sidebar.markdown("### Teste a melhor culinária do mundo")
 
 st.sidebar.markdown('___')
 
-st.sidebar.markdown('###### Powered by Fernanda Chuerubim')
+st.sidebar.markdown('###### Powered by Douglas Saturnino')
 
 st.header("Fome Zero - Dashboards")
 
@@ -29,12 +29,12 @@ st.write('###### Descreve a quantidade de restaurantes e cidades por país, bem 
 st.markdown('🏙️ VISÃO CIDADES')
 st.write('###### Análise das métricas classificadas por cidades, considerando avaliações dos restaurantes, tipos de culinárias disponíveis e os valores cobrados.')
 
-st.markdown('🛎️ VISÃO RESTAURANTES')
-st.write('###### Métricas gerais dos restaurantes, tais como: melhores restaurantes, restaurantes com mais avaliações e aqueles que reservam mesa e realizam entregas.')
-
 st.markdown('🍽️ VISÃO CULINÁRIAS')
 st.write('###### Análise das métricas relacionadas aos diversos tipos de culinárias, incluindo os melhores restaurantes por cada tipo de culinária.')
 
+st.markdown('🛎️ VISÃO RESTAURANTES')
+st.write('###### Métricas gerais dos restaurantes, tais como: melhores restaurantes, restaurantes com mais avaliações e aqueles que reservam mesa e realizam entregas.')
+
 st.markdown('___')
-st.markdown('### Contato do Cientista de Dados: Fernanda Chuerubim')
-st.write('##### Time de Data Science no Discord: @fernanda.3458')
+st.markdown('### Contato do Cientista de Dados: Douglas Saturnino')
+st.write('##### Time de Data Science no Discord: @douglasaturnino')

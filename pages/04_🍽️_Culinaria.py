@@ -1,21 +1,20 @@
 import streamlit as st
-import pandas as pd
 
 from utils.sidebar import create_sidebar, create_filtros_restaurants, create_filtros_cuisines
 from utils.cuisines_data import tabela_cuisines, write_metrics, top_cuisines_melhores, top_cuisines_piores
-from utils import geral_data as gd # aqui ta importando o arquivo
+from utils import geral_data as gd 
 
-def main(): # cria a função
+def main(): 
 
     st.set_page_config(page_title="CULINÁRIAS", page_icon="🍽️", layout="wide")
 
     df = gd.read_processed_data()
 
-    countries = create_sidebar(df) #chama a função
+    countries = create_sidebar(df) 
 
-    restaurants = create_filtros_restaurants(df) #chama a função
+    restaurants = create_filtros_restaurants(df) 
 
-    cuisines = create_filtros_cuisines(df) #chama a função
+    cuisines = create_filtros_cuisines(df) 
 
     st.markdown("# VISÃO CULINÁRIA")
 
@@ -38,6 +37,6 @@ def main(): # cria a função
         fig = top_cuisines_piores(df, countries, restaurants)
         st.plotly_chart(fig, use_container_width=True)
 
-if __name__ == "__main__": # se o arquivo principal "Home.py" é igual ao arquivo atual "Geral.py"
+if __name__ == "__main__": 
     main() 
 

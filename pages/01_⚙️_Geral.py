@@ -1,18 +1,18 @@
 import streamlit as st
 import pandas as pd
-import folium # para fazer mapa
+import folium 
 
-from folium.plugins import MarkerCluster # para juntar os pontos do folium
-from streamlit_folium import folium_static # para utilizar o folium no streamlit
+from folium.plugins import MarkerCluster 
+from streamlit_folium import folium_static 
 
-from utils.sidebar import create_sidebar # aqui ta importando só a função
-from utils import geral_data as gd # aqui ta importando o arquivo
+from utils.sidebar import create_sidebar 
+from utils import geral_data as gd 
 
 def create_map(df):
-    f = folium.Figure(width=1920, height=1080) # tamanho do mapa
+    f = folium.Figure(width=1920, height=1080) 
     mapa = folium.Map(max_bounds=True).add_to(f)
-    marker_cluster = MarkerCluster().add_to(mapa) # agrupamento do cluster
-    for _, line in df.iterrows(): #iterrows recebe index e line, o comando underline quer dizer que nao recebe o index
+    marker_cluster = MarkerCluster().add_to(mapa) 
+    for _, line in df.iterrows(): 
         name = line["restaurant_name"]
         price_for_two = line["average_cost_for_two"]
         cuisine = line["cuisines"]
@@ -37,15 +37,15 @@ def create_map(df):
             icon=folium.Icon(color=color, icon="home", prefix="fa"),
         ).add_to(marker_cluster)
 
-    folium_static(mapa, width=1024, height=768) # função com parametros do mapa
+    folium_static(mapa, width=1024, height=768) 
 
-def main(): # criar funcao para melhor organização!
+def main(): 
 
     st.set_page_config(page_title="VISÃO GERAL", page_icon="⚙️", layout="wide")
     
     df = gd.read_processed_data()
 
-    selected_countries = create_sidebar(df) # é uma variavel do retorno do create_sidebar 
+    selected_countries = create_sidebar(df) 
 
     st.markdown("# FOME ZERO")   
 
@@ -74,10 +74,10 @@ def main(): # criar funcao para melhor organização!
                 value =  gd.qtd_cuisines(df)
                 )
 
-    map_df = df.loc[df["country"].isin(selected_countries), :] # isin filtra os paises selecionados
+    map_df = df.loc[df["country"].isin(selected_countries), :] 
 
-    create_map(map_df) # primeiro aparece as metricas acima no streamlit e depois aparece o mapa!
+    create_map(map_df) 
 
 
-if __name__ == "__main__": # se o arquivo principal "Home.py" é igual ao arquivo atual "Geral.py"
+if __name__ == "__main__":
     main()

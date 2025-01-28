@@ -5,7 +5,7 @@ def qtd_restaurant(df):
     return df.shape[0]
 
 def qtd_countries(df):
-    return df["country"].nunique() # ->> return df["country"].nunique() ou utilizar ->> df.loc[:, "country"].nunique()
+    return df["country"].nunique() 
 
 def qtd_cities(df):
     return df["city"].nunique()

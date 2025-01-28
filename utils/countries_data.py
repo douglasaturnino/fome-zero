@@ -1,5 +1,3 @@
-import streamlit as st
-import pandas as pd
 import plotly.express as px
 
 def countries_restaurants(countries, df):
@@ -23,7 +21,7 @@ def countries_restaurants(countries, df):
     return fig
 
 def countries_cities(countries, df):
-    df_aux = (df.loc[df["country"].isin(countries), # isin filtra os paises e faz o papel do "ou".
+    df_aux = (df.loc[df["country"].isin(countries), 
                      ["country", "city"]]
     .groupby("country")
     .nunique()
@@ -39,13 +37,12 @@ def countries_cities(countries, df):
         title = "Quantidade de Cidades Registradas por País",
         labels = {"country": "Paises",
                  "city": "Quantidade de Cidade"}
-        #color_discrete_sequence=["orange"] 
     )
 
     return fig
 
 def countries_votes(countries, df):
-    df_aux = (df.loc[df["country"].isin(countries), # isin filtra os paises e faz o papel do "ou".
+    df_aux = (df.loc[df["country"].isin(countries), 
                      ["country", "votes"]]
     .groupby("country")
     .mean()
@@ -58,17 +55,16 @@ def countries_votes(countries, df):
         x = "country",
         y = "votes",
         text = "votes",
-        text_auto=".2f", # f de float
+        text_auto=".2f", 
         title = "Média de Avaliações Registradas por País",
         labels = {"country": "Paises",
                  "votes": "Avaliações Cadastradas"}
-        #color_discrete_sequence=["green"] 
     )
 
     return fig
 
 def countries_average_for_two(countries, df):
-    df_aux = (df.loc[df["country"].isin(countries), # isin filtra os paises e faz o papel do "ou".
+    df_aux = (df.loc[df["country"].isin(countries),
                      ["country", "average_cost_for_two"]]
     .groupby("country")
     .mean()
@@ -81,11 +77,10 @@ def countries_average_for_two(countries, df):
         x = "country",
         y = "average_cost_for_two",
         text = "average_cost_for_two",
-        text_auto=".2f", # f de float
+        text_auto=".2f", 
         title = "Média de um prato para 2 pessoas por País",
         labels = {"country": "Paises",
                  "average_cost_for_two": "Média de um prato para duas pessoas"}
-        #color_discrete_sequence=["green"] 
     )
 
     return fig
