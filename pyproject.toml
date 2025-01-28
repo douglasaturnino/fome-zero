@@ -1,0 +1,11 @@
+[project]
+name = "fome-zero-main"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=2.0.2",
+    "plotly>=6.0.0",
+    "streamlit>=1.41.1",
+]
