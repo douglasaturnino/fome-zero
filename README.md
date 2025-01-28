@@ -104,7 +104,7 @@ As culinárias orientais tendem a ter avaliações altas, enquanto as culinária
 # 5. O produto final do projeto
 Dashboard online, hospedado em Cloud e disponível para acesso em qualquer dispositivo conectado a internet.
 
-O painel pode ser acessado através do link: https://projeto-fome-zero-fc.streamlit.app/
+O painel pode ser acessado através do link: https://fome-zero-dso.streamlit.app/Geral
 
 # 6. Conclusão
 O objetivo desse projeto é criar um conjunto de gráficos e/ou tabelas que exibem essa métricas da melhor forma possível para o CEO.
